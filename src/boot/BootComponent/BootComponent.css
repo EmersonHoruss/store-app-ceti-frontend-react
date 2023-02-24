@@ -1,0 +1,36 @@
+:root {
+  --sidebarWidthNoMobile: 10rem;
+  --sidebarHeightMobile: 5rem;
+}
+
+.page-layout {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "main-content"
+    "sidebar";
+  grid-template-rows: calc(100% - var(--sidebarHeightMobile)) var(
+      --sidebarHeightMobile
+    );
+  grid-template-columns: 100%;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: rgba(206, 206, 206, 0.3);
+}
+
+.main-content {
+  grid-area: main-content;
+}
+
+@media (min-width: 640px) {
+  .page-layout {
+    grid-template-areas: "sidebar main-content";
+    grid-template-columns: var(--sidebarWidthNoMobile) calc(
+        100% - var(--sidebarWidthNoMobile)
+      );
+    grid-template-rows: 100%;
+  }
+}

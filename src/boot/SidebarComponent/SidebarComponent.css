@@ -1,0 +1,29 @@
+:root {
+  --sidebarWidthNoMobile: 10rem;
+  --sidebarHeightMobile: 5rem;
+}
+
+.options {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 640px) {
+  .options {
+    flex-direction: column;
+    justify-content: initial;
+    align-items: center;
+  }
+
+  button {
+    height: 2rem;
+  }
+}
